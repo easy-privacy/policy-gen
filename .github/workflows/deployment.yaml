@@ -13,14 +13,23 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
+    - uses: actions/checkout@v3
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm install
+    - run: npm run predeploy
+
     - name: Copy files via SSH
       uses: appleboy/scp-action@master
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_PRIVATE_KEY }}
-        source: '.'
-        target: '~/app'
+        source: 'build/,server/'
+        target: '~/app2'
 
     - name: Execute remote SSH commands
       uses: appleboy/ssh-action@v1.0.3
@@ -29,10 +38,4 @@ jobs:
         username: ${{ secrets.EC2_USER }}
         key: ${{ secrets.EC2_PRIVATE_KEY }}
         script: |
-          cd ~/app
-          npm install
-          cd server
-          npm install
-          cd ..
-          npm run predeploy
-          pm2 restart all
+          cd ~/app2

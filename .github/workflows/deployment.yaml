@@ -40,4 +40,4 @@ jobs:
         script: |
           cd ~/app/server
           npm install
-          sudo pm2 restart
+          sudo pm2 restart all

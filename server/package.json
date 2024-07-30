@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "serve-prod": "NODE_ENV=prod PORT=443 node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",

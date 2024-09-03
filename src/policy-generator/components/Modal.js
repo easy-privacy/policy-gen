@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function Modal({ isOpen, onClose, onSubmit }) {
-  const [email, setEmail] = useState('abb@glance.com');
+  const [email, setEmail] = useState('');
   const [error, setError] = useState('');
 
   const handleEmailChange = (e) => {

@@ -18,7 +18,7 @@ function DocumentDisplay({ industry, dataCollection, email, companyName }) {
         <ol className="list-decimal list-inside">
           {dataCollection.map((item, index) => (
             <li key={index} className="mb-2">
-              <strong>{item.data}</strong> for {item.purpose}
+              <strong>{item.data}</strong> - {item.purpose}
             </li>
           ))}
         </ol>

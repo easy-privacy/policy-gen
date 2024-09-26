@@ -20,6 +20,17 @@ function IndustrySelect({ onChange }) {
         <option value="Tech_Manufacturing">Tech Manufacturing</option>
         <option value="Manufacturing">Manufacturing</option>
         <option value="Transportation_and_Warehousing">Transportation and Warehousing</option>
+        <option value="Retail">Retail</option>
+        <option value="Construction">Construction</option>
+        <option value="Insurance">Insurance</option>
+        <option value="Banks">Banks</option>
+        <option value="Digital_Lending_Platforms">Digital Lending Platforms</option>
+        <option value="Agriculture">Agriculture</option>
+        <option value="Pharmaceutical">Pharmaceutical</option>
+        <option value="Car_Manufacturing">Car Manufacturing</option>
+        <option value="Gaming">Gaming</option>
+        <option value="Food_and_Beverages">Food and Beverages</option>
+        <option value="IT_Outsourcing">IT Outsourcing</option>
       </select>
     </div>
   );
